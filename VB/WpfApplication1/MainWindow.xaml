@@ -1,0 +1,135 @@
+﻿<dxr:DXRibbonWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" x:Class="WpfApplication1.MainWindow"
+        Title="MainWindow" Height="768" Width="1024"  dx:ThemeManager.ThemeName="Office2013LightGray">
+    <Grid>
+        <DockPanel>
+            <dxr:RibbonControl x:Name="ParentRibbonControl" DockPanel.Dock="Top" Height="auto" MDIMergeStyle="Always" SelectedPageOnMerging="ParentSelectedPage">
+                <dxr:RibbonDefaultPageCategory>
+                    <dxr:RibbonPage Caption="Home">
+                        <dxr:RibbonPageGroup Caption="File">
+                            <dxb:BarButtonItem x:Name="biNew" Content="New" LargeGlyph="{dx:DXImage Image=New_32x32.png}"/>
+                            <dxb:BarButtonItem x:Name="biOpen" Content="Open" Glyph="{dx:DXImage Image=Open_16x16.png}"/>
+                            <dxb:BarButtonItem x:Name="biSave" Content="Save" Glyph="{dx:DXImage Image=Save_16x16.png}"/>
+                            <dxb:BarButtonItem x:Name="biSaveAs" Content="Save As" Glyph="{dx:DXImage Image=SaveAs_16x16.png}"/>
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="MDIStyle">
+                            <dxb:BarButtonItem x:Name="biMDI" Content="MDI" Glyph="{dx:DXImage Image=Employee_16x16.png}" ItemClick="biMDI_ItemClick"/>
+                            <dxb:BarButtonItem x:Name="biTabbed" Content="Tabbed" Glyph="{dx:DXImage Image=Employee_16x16.png}" ItemClick="biTabbed_ItemClick" />
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                </dxr:RibbonDefaultPageCategory>
+            </dxr:RibbonControl>
+            <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom" MDIMergeStyle="Always">
+                <dxr:RibbonStatusBarControl.LeftItems>
+                    <dxb:BarStaticItem x:Name="biRow" Content="Row:" ShowBorder="False" MergeType="MergeItems"/>
+                    <dxb:BarStaticItem x:Name="biRowValue" Content="1" MergeType="MergeItems"/>
+                    <dxb:BarStaticItem x:Name="biColumn" Content="Column:" ShowBorder="False" MergeType="MergeItems"/>
+                    <dxb:BarStaticItem x:Name="biColumnValue" Content="1" MergeType="MergeItems"/>
+                </dxr:RibbonStatusBarControl.LeftItems>
+                <dxr:RibbonStatusBarControl.RightItems>
+                    <dxb:BarCheckItem x:Name="biLeft" Glyph="{dx:DXImage Image=AlignLeft_16x16.png}" GroupIndex="1" IsChecked="True" MergeType="MergeItems"/>
+                    <dxb:BarCheckItem x:Name="biCenter" Glyph="{dx:DXImage Image=AlignCenter_16x16.png}" GroupIndex="1" MergeType="MergeItems"/>
+                    <dxb:BarCheckItem x:Name="biRight" Glyph="{dx:DXImage Image=AlignRight_16x16.png}" GroupIndex="1" MergeType="MergeItems"/>
+                </dxr:RibbonStatusBarControl.RightItems>
+            </dxr:RibbonStatusBarControl>
+            <Grid>
+                <dxdo:DockLayoutManager x:Name="dlManager">
+                    <dxdo:LayoutGroup>
+                        <dxdo:DocumentGroup x:Name="ChildDocumentGroup" MDIStyle="Tabbed" DestroyOnClosingChildren="False">
+                            <dxdo:DocumentPanel x:Name="Document1" Caption="Document1" MDISize="800,600">
+                                <Grid>
+                                    <DockPanel>
+                                        <dxr:RibbonControl x:Name="ChildRibbonControl1" DockPanel.Dock="Top" Height="auto" SelectedPageOnMerging="ParentSelectedPage">
+                                            <dxr:RibbonDefaultPageCategory>
+                                                <dxr:RibbonPage Caption="Home" MergeType="MergeItems">
+                                                    <dxr:RibbonPageGroup Caption="Clipboard">
+                                                        <dxb:BarButtonItem x:Name="biPaste" Content="Paste" Glyph="{dx:DXImage Image=Paste_16x16.png}" 
+                                                                                               LargeGlyph="{dx:DXImage Image=Paste_32x32.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biCut" Content="Cut" Glyph="{dx:DXImage Image=Cut_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biCopy" Content="Copy" Glyph="{dx:DXImage Image=Copy_16x16.png}"/>
+                                                    </dxr:RibbonPageGroup>
+                                                    <dxr:RibbonPageGroup Caption="Font">
+                                                        <dxb:BarButtonItem x:Name="biBold" Content="Bold" LargeGlyph="{dx:DXImage Image=Bold_32x32.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biItalic" Content="Italic" LargeGlyph="{dx:DXImage Image=Italic_32x32.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biUnderline" Content="Underline" LargeGlyph="{dx:DXImage Image=Underline_32x32.png}"/>
+                                                    </dxr:RibbonPageGroup>
+
+                                                </dxr:RibbonPage>
+                                                <dxr:RibbonPage Caption="View" MergeType="MergeItems">
+                                                    <dxr:RibbonPageGroup Caption="Zoom">
+                                                        <dxb:BarButtonItem x:Name="biZoom1" Content="Zoom" LargeGlyph="{dx:DXImage Image=Zoom_32x32.png}" Glyph="{dx:DXImage Image=Zoom_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="bi100per1" Content="100%" Glyph="{dx:DXImage Image=Zoom100_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biZoomIn1" Content="Zoom In" Glyph="{dx:DXImage Image=ZoomIn_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biZoomOut1" Content="Zoom Out" Glyph="{dx:DXImage Image=ZoomOut_16x16.png}"/>
+                                                    </dxr:RibbonPageGroup>
+                                                    <dxr:RibbonPageGroup Caption="Print">
+                                                        <dxb:BarButtonItem x:Name="biPrint1" Content="Print" LargeGlyph="{dx:DXImage Image=Print_32x32.png}"/>
+                                                    </dxr:RibbonPageGroup>
+                                                </dxr:RibbonPage>
+                                                <dxr:RibbonPage Caption="Paragraph">
+                                                    <dxr:RibbonPageGroup Caption="Alighting Text">
+                                                        <dxb:BarButtonItem x:Name="biCenter1" Content="Center" 
+                                                                                               LargeGlyph="{dx:DXImage Image=AlignCenter_32x32.png}" Glyph="{dx:DXImage Image=AlignCenter_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biLeft1" Content="Left" 
+                                                                                               Glyph="{dx:DXImage Image=AlignLeft_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biRight1" Content="Right" 
+                                                                                               Glyph="{dx:DXImage Image=AlignRight_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biJustify" Content="Justify" Glyph="{dx:DXImage Image=AlignJustify_16x16.png}"/>
+                                                    </dxr:RibbonPageGroup>
+                                                    <dxr:RibbonPageGroup Caption="Lists">
+                                                        <dxb:BarButtonItem x:Name="biBullets" Content="Bullets" Glyph="{dx:DXImage Image=ListBullets_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biNumbers" Content="Numbering" Glyph="{dx:DXImage Image=ListNumbers_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biMultilevel" Content="Multelevel" Glyph="{dx:DXImage Image=ListMultilevel_16x16.png}"/>
+                                                    </dxr:RibbonPageGroup>
+                                                </dxr:RibbonPage>
+                                            </dxr:RibbonDefaultPageCategory>
+                                        </dxr:RibbonControl>
+                                        <Grid/>
+                                    </DockPanel>
+                                </Grid>
+                            </dxdo:DocumentPanel>
+                            <dxdo:DocumentPanel x:Name="Document2" Caption="Document2" MDILocation="226,22" MDISize="800,600">
+                                <Grid>
+                                    <DockPanel>
+                                        <dxr:RibbonControl x:Name="ChildRibbonControl2" DockPanel.Dock="Top" Height="auto" SelectedPageOnMerging="ParentSelectedPage">
+                                            <dxr:RibbonDefaultPageCategory>
+                                                <dxr:RibbonPage Caption="View" MergeType="MergeItems">
+                                                    <dxr:RibbonPageGroup Caption="Zoom">
+                                                        <dxb:BarButtonItem x:Name="biZoom" Content="Zoom" LargeGlyph="{dx:DXImage Image=Zoom_32x32.png}" Glyph="{dx:DXImage Image=Zoom_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="bi100per" Content="100%" Glyph="{dx:DXImage Image=Zoom100_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biZoomIn" Content="Zoom In" Glyph="{dx:DXImage Image=ZoomIn_16x16.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biZoomOut" Content="Zoom Out" Glyph="{dx:DXImage Image=ZoomOut_16x16.png}"/>
+                                                    </dxr:RibbonPageGroup>
+                                                    <dxr:RibbonPageGroup Caption="Print">
+                                                        <dxb:BarButtonItem x:Name="biPrint" Content="Print" LargeGlyph="{dx:DXImage Image=Print_32x32.png}"/>
+                                                    </dxr:RibbonPageGroup>
+                                                </dxr:RibbonPage>
+                                                <dxr:RibbonPage Caption="Options">
+                                                    <dxr:RibbonPageGroup x:Name="Options" Caption="Options">
+                                                        <dxb:BarButtonItem x:Name="biHelp" Content="Help" Glyph="{dx:DXImage Image=Index_16x16.png}" LargeGlyph="{dx:DXImage Image=Index_32x32.png}" />
+                                                        <dxb:BarButtonItem x:Name="biFind" Content="Find" Glyph="{dx:DXImage Image=Find_32x32.png}" LargeGlyph="{dx:DXImage Image=Find_32x32.png}" />
+                                                        <dxb:BarButtonItem x:Name="biClose" Content="Close" Glyph="{dx:DXImage Image=Close_16x16.png}" LargeGlyph="{dx:DXImage Image=Close_32x32.png}"/>
+                                                    </dxr:RibbonPageGroup>
+                                                    <dxr:RibbonPageGroup Caption="Comments">
+                                                        <dxb:BarButtonItem x:Name="biNewComment" Content="New Comment" Glyph="{dx:DXImage Image=EditComment_16x16.png}" LargeGlyph="{dx:DXImage Image=EditComment_32x32.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biDelComment" Content="Delete Comment" Glyph="{dx:DXImage Image=DeleteComment_16x16.png}" LargeGlyph="{dx:DXImage Image=DeleteComment_32x32.png}" />
+                                                        <dxb:BarButtonItem x:Name="biNextComment" Content="Next Comment" Glyph="{dx:DXImage Image=NextComment_16x16.png}" LargeGlyph="{dx:DXImage Image=NextComment_32x32.png}"/>
+                                                        <dxb:BarButtonItem x:Name="biPrevComment" Content="Previous Comment" Glyph="{dx:DXImage Image=PreviousComment_16x16.png}" LargeGlyph="{dx:DXImage Image=PreviousComment_32x32.png}"/>
+                                                    </dxr:RibbonPageGroup>
+
+                                                </dxr:RibbonPage>
+                                            </dxr:RibbonDefaultPageCategory>
+                                        </dxr:RibbonControl>
+                                        <Grid/>
+                                    </DockPanel>
+                                </Grid>
+                            </dxdo:DocumentPanel>
+                        </dxdo:DocumentGroup>
+                    </dxdo:LayoutGroup>
+                </dxdo:DockLayoutManager>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</dxr:DXRibbonWindow>
