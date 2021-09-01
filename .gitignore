@@ -295,3 +295,8 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# ProjectUpdrade & TryConvert files
+*.csproj.old
+*.vbproj.old
+*.bak
