@@ -9,7 +9,7 @@ The following controls support automatic bar merging:
 * [DXTabControl](https://docs.devexpress.com/WPF/7975/controls-and-libraries/layout-management/tab-control/fundamentals/dxtabcontrol)
 * [Dock Layout Manager](https://docs.devexpress.com/WPF/6191/controls-and-libraries/layout-management/dock-windows)
   
-In this example, the [docklayoutmanager](https://docs.devexpress.com/WPF/DevExpress.Xpf.Docking.DockLayoutManager) component implements the tabbed MDI interface. The main application window and tabs contains ribbon controls.
+In this example, the [docklayoutmanager](https://docs.devexpress.com/WPF/DevExpress.Xpf.Docking.DockLayoutManager) component implements the tabbed MDI interface. The main application window and tabs contain ribbon controls.
 
 The example illustrates pages, page groups and items merging from child ribbons to the main ribbon control.
 
