@@ -11,7 +11,7 @@ The following controls support automatic bar merging:
   
 In this example, the [docklayoutmanager](https://docs.devexpress.com/WPF/DevExpress.Xpf.Docking.DockLayoutManager) component implements the tabbed MDI interface. The main application window and tabs contain ribbon controls.
 
-The example illustrates pages, page groups and items merging from child ribbons to the main ribbon control.
+The example merges a pages, page groups, and items from child ribbons to the main ribbon control.
 
 ![image](https://user-images.githubusercontent.com/12169834/174033506-7b471c7b-c6f4-4c36-b84b-548a2f78477e.png)
 
