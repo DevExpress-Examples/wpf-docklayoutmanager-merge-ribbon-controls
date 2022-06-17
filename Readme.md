@@ -1,28 +1,40 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128655445/21.1.5%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T304338)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+# WPF Dock Layout Manager - Automatically Merge Ribbon Controls
 
-* **[MainWindow.xaml](./CS/WpfApplication1/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/WpfApplication1/MainWindow.xaml))**
+The following controls support automatic bar merging:
+
+* [DXTabControl](https://docs.devexpress.com/WPF/7975/controls-and-libraries/layout-management/tab-control/fundamentals/dxtabcontrol)
+* [Dock Layout Manager](https://docs.devexpress.com/WPF/6191/controls-and-libraries/layout-management/dock-windows)
+  
+In this example, the [docklayoutmanager](https://docs.devexpress.com/WPF/DevExpress.Xpf.Docking.DockLayoutManager) component implements the tabbed MDI interface. The main application window and tabs contain ribbon controls.
+
+The example merges a pages, page groups, and items from child ribbons to the main ribbon control.
+
+![image](https://user-images.githubusercontent.com/12169834/174033506-7b471c7b-c6f4-4c36-b84b-548a2f78477e.png)
+
+<!-- default file list -->
+## Files to Look At:
+
+* [MainWindow.xaml](./CS/WpfApplication1/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/WpfApplication1/MainWindow.xaml))
 * [MainWindow.xaml.cs](./CS/WpfApplication1/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/WpfApplication1/MainWindow.xaml.vb))
 <!-- default file list end -->
-# How to: Automatically Merge Ribbon Controls
 
+## Documentation
 
-<p>The automatic ribbon merging is supported by several DevExpress controls
+- [Merge Bars and Ribbon in MDI Mode](https://docs.devexpress.com/WPF/9155/controls-and-libraries/layout-management/dock-windows/runtime-features/mdi-bar-merging)
+- [DXTabControl.AllowMerging](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.DXTabControl.AllowMerging)
+- [DockLayoutManager.MDIMergeStyle](https://docs.devexpress.com/WPF/DevExpress.Xpf.Docking.DockLayoutManager.MDIMergeStyle)
+- [DockLayoutManager.AllowMergingAutoHidePanels](https://docs.devexpress.com/WPF/DevExpress.Xpf.Docking.DockLayoutManager.AllowMergingAutoHidePanels)
+- [RibbonPage.MergeType](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.RibbonPage.MergeType)
+- [RibbonPageGroup.MergeType](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.RibbonPageGroup.MergeType)
+- [RibbonPageCategoryBase.MergeOrder](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.RibbonPageCategoryBase.MergeOrder)
+- [RibbonPage.MergeOrder](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.RibbonPage.MergeOrder)
+- [RibbonPageGroup.MergeOrder](https://docs.devexpress.com/WPF/DevExpress.Xpf.Ribbon.RibbonPageGroup.MergeOrder)
+- [BarItemLinkBase.MergeOrder](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarItemLinkBase.MergeOrder)
 
-* <strong>DXTabControl</strong> - see <a href="https://documentation.devexpress.com/#WPF/DevExpressXpfCoreDXTabControl_AllowMergingtopic">DXTabControl.AllowMerging Property</a> to learn more on how to enable it.
-* <strong>DXDocking</strong> - see <a href="https://documentation.devexpress.com/#WPF/CustomDocument10587">Merging Overview</a> and <a href="https://documentation.devexpress.com/#WPF/CustomDocument9155">MDI Bar Merging</a>.<br><br>In this example, the DockLayoutManager component implements the tabbed MDI interface. The main application window, as well as tabs, contains ribbon controls. The example illustrates pages, page groups and items merging from child ribbons to the main ribbon control.<br><br>There are several properties you can use to control the merging process in DockLayoutManager
+## More Examples
 
-* <a href="https://documentation.devexpress.com/#WPF/DevExpressXpfDockingDockLayoutManager_MDIMergeStyletopic">DockLayoutManager.MDIMergeStyle</a> - using this property, it is possible to disable merging or specify what panels will be merged: only active panels, or all selected tabs/maximized MDI panels.
-* <a href="https://documentation.devexpress.com/#WPF/DevExpressXpfDockingDockLayoutManager_AllowMergingAutoHidePanelstopic">DockLayoutManager.AllowMergingAutoHidePanels</a>.
-* <strong>MergeType</strong> properties (they are available in <a href="https://documentation.devexpress.com/WPF/DevExpressXpfRibbonRibbonPage_MergeTypetopic.aspx">RibbonPage</a>, <a href="https://documentation.devexpress.com/WPF/DevExpressXpfRibbonRibbonPageGroup_MergeTypetopic.aspx">RibbonPageGroup</a> and <a href="https://documentation.devexpress.com/WPF/DevExpressXpfBarsBarItemLinkBase_MergeTypetopic.aspx">BarItemLinkBase</a>) allow you to control how items with similar captions will be merged.
-* <strong>MergeOrder</strong> properties (they are available in <a href="https://documentation.devexpress.com/WPF/DevExpressXpfRibbonRibbonPageCategoryBase_MergeOrdertopic.aspx">RibbonPageCategoryBase</a>, <a href="https://documentation.devexpress.com/WPF/DevExpressXpfRibbonRibbonPage_MergeOrdertopic.aspx">RibbonPage</a>, <a href="https://documentation.devexpress.com/WPF/DevExpressXpfRibbonRibbonPageGroup_MergeOrdertopic.aspx">RibbonPageGroup</a> and <a href="https://documentation.devexpress.com/WPF/DevExpressXpfBarsBarItemLinkBase_MergeOrdertopic.aspx">BarItemLinkBase</a>) can be used to control the merging order.
-* <a href="https://documentation.devexpress.com/#WPF/DevExpressXpfRibbonRibbonControl_SelectedPageOnMergingtopic">RibbonControl.SelectedPageOnMerging</a> sets which ribbon's page will be selected when ribbons are merged.<br><br>For more information, refer to <a href="https://documentation.devexpress.com/#WPF/CustomDocument10587">Merging Overview</a>.</p>
-
-<br/>
-
-
+- [WPF Dock Layout Manager - Merge Bars in Controls That Support Automatic Merging](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-merge-bars-in-controls-that-support-automatic-merging)
