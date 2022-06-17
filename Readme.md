@@ -4,7 +4,7 @@
 <!-- default badges end -->
 # WPF Dock Layout Manager - Automatically Merge Ribbon Controls
 
-The following control support automatic bar merging:
+The following controls support automatic bar merging:
 
 * [DXTabControl](https://docs.devexpress.com/WPF/7975/controls-and-libraries/layout-management/tab-control/fundamentals/dxtabcontrol)
 * [Dock Layout Manager](https://docs.devexpress.com/WPF/6191/controls-and-libraries/layout-management/dock-windows)
